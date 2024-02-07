@@ -6,7 +6,11 @@ import models
 app = FastAPI()
 
 origins = [
-    "*"
+    "http://localhost",
+    "http://localhost:5173",
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
+    "http://imagine-apps.com.s3-website-us-east-1.amazonaws.com"
 ]
 
 app.add_middleware(
