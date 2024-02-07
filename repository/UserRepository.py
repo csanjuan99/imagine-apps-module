@@ -1,9 +1,8 @@
 import models.User as User
-from schemas.User import User as UserModel
 from sqlalchemy.orm import Session
 
 
-def get_user_by_email(db: Session, email: str) -> UserModel:
+def get_user_by_email(db: Session, email: str):
     return db.query(User).filter(User.email == email).first()
 
 
