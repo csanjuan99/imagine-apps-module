@@ -22,7 +22,7 @@ async def login(db: Session, email: str, password: str):
         raise HTTPException(status_code=400, detail="Incorrect password")
 
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    to_encode = {"sub": user.email, "tasks": user.tasks}
+    to_encode = {"sub": user.email}
     if access_token_expires:
         expire = datetime.now(timezone.utc) + access_token_expires
     else:
